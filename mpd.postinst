@@ -1,0 +1,30 @@
+#!/bin/bash
+set -e
+echo "Updating MPD configuration"
+MPDCONF="/etc/mpd.conf"
+VARMPD="/var/tmp/mpd.conf"
+PIDDIR="/run/mpd/"
+
+SYSTEMD_MPD_SERVICE=/etc/systemd/system/multi-user.target.wants/mpd.service
+SYSTEMD_MPD_SOCKET=/etc/systemd/system/sockets.target.wants/mpd.socket
+MPD_SERVICE=/usr/local/lib/systemd/system/mpd.service
+MPD_SOCKET=/usr/local/lib/systemd/system/mpd.socket
+
+echo "Linking MPD service and socket to systemd configuration"
+rm -f ${SYSTEMD_MPD_SERVICE} ${SYSTEMD_MPD_SOCKET}
+ln -s ${MPD_SERVICE} ${SYSTEMD_MPD_SERVICE}
+ln -s ${MPD_SOCKET} ${SYSTEMD_MPD_SOCKET}
+
+cmd="sudo chown mpd:audio ${VARMPD}"
+echo ${cmd};${cmd}
+if [[ ! -f ${MPDCONF} ]]; then
+    echo "${MPDCONF} not found - restoring"
+	cmd="sudo cp ${VARMPD} ${MPDCONF}"
+	echo ${cmd};${cmd}
+else  
+	echo "${MPDCONF} exists"
+    cmd="sudo chown mpd:audio ${MPDCONF}"
+	echo ${cmd};${cmd}
+fi
+
+# End of script

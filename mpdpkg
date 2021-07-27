@@ -1,0 +1,53 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+# $Id: mpdpkg,v 1.11 2021/05/31 20:00:07 bob Exp $
+# This package must be built under Raspbian Buster (Not Jessie or earlier)
+# Source: <source package name; defaults to package name>
+Section: misc
+Priority: optional
+Homepage: http://www.bobrathbone.com
+Standards-Version: 3.9.2
+
+Package: mpd
+Version: 0.22.8
+Maintainer: Bob Rathbone <bob@bobrathbone.com>
+Email-Address : bob@bobrathbone.com
+
+# Pre-Depends: <comma-separated list of packages>
+# Depends: <comma-separated list of packages>
+Depends: libsidutils0
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+# Architecture: all
+Architecture: armhf
+
+# Copyright: <defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+preinst: mpd.preinst
+
+Extra-Files: README.md
+
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+Files:  mpd.socket /usr/local/lib/systemd/system/
+	mpd.socket /usr/local/lib/systemd/system/ 
+	mpd.service /usr/local/lib/systemd/system/ 
+	mpd /usr/local/bin/	
+	mpd.service /systemd/system/mpd.service/
+	mpd.svg /usr/local/share/icons/hicolor/scalable/apps/
+	AUTHORS /usr/local/share/doc/mpd/
+	COPYING /usr/local/share/doc/mpd/
+	NEWS /usr/local/share/doc/mpd/
+	README.md /usr/local/share/doc/mpd/
+	mpd.conf /var/tmp/
+	
+postinst: mpd.postinst
+postrm: mpd.postrm
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: Musica Player Daemon build
+ This package provides a later version of MPD than released with Raspberry Pi OS (Rasbian)
+ .
+

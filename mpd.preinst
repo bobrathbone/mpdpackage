@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+echo "Installing MPD"
+cmd="systemctl stop mpd.service mpd.socket"
+echo ${cmd};${cmd} 
