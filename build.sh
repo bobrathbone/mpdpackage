@@ -12,7 +12,7 @@ OS_RELEASE=/etc/os-release
 DIR=~/mpd-${VERSION}
 
 # Amend this to point to the actual MPD build directory
-BUILD_DIR=/home/pi/mpd-0.22.8
+BUILD_DIR=/home/pi/mpd-0.22.9
 
 # Modify package definition with version number
 SAVEIFS=${IFS}; IFS='-'
@@ -83,6 +83,9 @@ grep "ExecStart=" mpd.service
 
 echo "Set permissions for mpd.conf"
 cmd="sudo chown mpd:audio mpd.conf"
+echo ${cmd}; ${cmd}
+
+cmd="sudo apt-get -y install equivs apt-file lintian"
 echo ${cmd}; ${cmd}
 
 echo
