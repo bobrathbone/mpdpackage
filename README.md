@@ -18,6 +18,9 @@ for example mpd_0.22.8_armhf.deb
 
 To install it run
 sudo dpkg -i mpd_0.22.8_armhf.deb
+  
+For basic installation instructions
+[Full manual](https://github.com/bobrathbone/mpdpackage/blob/main/docs/Compiling%20and%20installing%20MPD.pdf).
 
 Bob Rathbone
 Web site: www.bobrathbone.com
