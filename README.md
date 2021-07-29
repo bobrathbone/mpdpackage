@@ -10,14 +10,14 @@ Edit the build.sh BUILD_DIR to point to the directory where you built the
 latest version of MPD using the instructions https://www.musicpd.org/doc/html/user.html
 
 For example:
-BUILD_DIR=/home/pi/mpd-0.22.8
+BUILD_DIR=/home/pi/mpd-0.22.9
 
 The run ./build.sh as user pi.
 This will produce a debian package called mpd_<version>_armhf.deb 
-for example mpd_0.22.8_armhf.deb
+for example mpd_0.22.9_armhf.deb
 
 To install it run
-sudo dpkg -i mpd_0.22.8_armhf.deb
+sudo dpkg -i mpd_0.22.9_armhf.deb
   
 For basic installation instructions
 [Full manual](https://github.com/bobrathbone/mpdpackage/blob/main/docs/Compiling%20and%20installing%20MPD.pdf).
