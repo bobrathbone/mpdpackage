@@ -1,6 +1,6 @@
 ### Commented entries have reasonable defaults.
 ### Uncomment to edit them.
-# $Id: mpdpkg,v 1.11 2021/05/31 20:00:07 bob Exp $
+# $Id: mpdpkg,v 1.13 2021/12/29 06:00:02 bob Exp $
 # This package must be built under Raspbian Buster (Not Jessie or earlier)
 # Source: <source package name; defaults to package name>
 Section: misc
@@ -9,7 +9,7 @@ Homepage: http://www.bobrathbone.com
 Standards-Version: 3.9.2
 
 Package: mpd
-Version: 0.22.9
+Version: 0.23.5
 Maintainer: Bob Rathbone <bob@bobrathbone.com>
 Email-Address : bob@bobrathbone.com
 

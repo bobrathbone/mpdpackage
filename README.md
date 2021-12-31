@@ -1,28 +1,29 @@
+# Music Player Daemon
 
-The build.sh script builds a upgrade package for the Music Player Daemon (MPD) for Raspberry Pi on the Raspberry Pi OS operating system (Formally called Raspbian).
-As it is an upgrade, the MPD and MPC package and required libraries must already have been installed
+http://www.musicpd.org
 
-To do this run
-sudo apt-get install mpd mpc (and if necessary python{3}-mpd)
+A daemon for playing music of various formats.  Music is played through the 
+server's audio device.  The daemon stores info about all available music, 
+and this info can be easily searched and retrieved.  Player control, info
+retrieval, and playlist management can all be managed remotely.
 
-To build the package:
-Edit the build.sh BUILD_DIR to point to the directory where you built the
-latest version of MPD using the instructions https://www.musicpd.org/doc/html/user.html
-
-For example:
-BUILD_DIR=/home/pi/mpd-0.22.9
-
-The run ./build.sh as user pi.
-This will produce a debian package called mpd_<version>_armhf.deb 
-for example mpd_0.22.9_armhf.deb
-
-To install it run
-sudo dpkg -i mpd_0.22.9_armhf.deb
-  
 For basic installation instructions
-[Full manual](https://github.com/bobrathbone/mpdpackage/blob/main/docs/Compiling%20and%20installing%20MPD.pdf).
+[read the manual](https://www.musicpd.org/doc/user/install.html).
 
-Bob Rathbone
-Web site: www.bobrathbone.com
-Email: bob@bobrathbone.com
+# Users
 
+- [Manual](http://www.musicpd.org/doc/user/)
+- [Forum](http://forum.musicpd.org/)
+- [IRC](ircs://irc.libera.chat:6697/#mpd)
+- [Bug tracker](https://github.com/MusicPlayerDaemon/MPD/issues/)
+
+# Developers
+
+- [Protocol specification](http://www.musicpd.org/doc/protocol/)
+- [Developer manual](http://www.musicpd.org/doc/developer/)
+
+# Legal
+
+MPD is released under the
+[GNU General Public License version 2](https://www.gnu.org/licenses/gpl-2.0.txt),
+which is distributed in the COPYING file.

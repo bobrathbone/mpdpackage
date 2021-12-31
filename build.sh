@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.14 2021/05/31 20:00:07 bob Exp $
+# $Id: build.sh,v 1.16 2021/12/29 06:00:02 bob Exp $
 # Build script for packaging latest build of Music Player Daemon (MPD)
 # Run this script as user pi and not root
 
@@ -12,7 +12,7 @@ OS_RELEASE=/etc/os-release
 DIR=~/mpd-${VERSION}
 
 # Amend this to point to the actual MPD build directory
-BUILD_DIR=/home/pi/mpd-0.22.9
+BUILD_DIR=/home/pi/mpd-0.23.5
 
 # Modify package definition with version number
 SAVEIFS=${IFS}; IFS='-'
