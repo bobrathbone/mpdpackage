@@ -1,11 +1,11 @@
 #!/bin/bash
-# $Id: build.sh,v 1.24 2026/03/24 17:46:34 bob Exp $
+# $Id: build64.sh,v 1.3 2026/04/01 10:07:23 bob Exp $
 # Build script for packaging latest build of Music Player Daemon (MPD)
 # Run this script as user pi and not root
+# OBSOLETE - use build.sh and mpdpkg to build "all" (32 and 64-bit) architecture
 
 PKG=mpd
-PKGDEF=mpdpkg
-BUILD_DIR=/home/pi/mpd-0.24.9
+PKGDEF=mpdpkg64
 VERSION=$(grep ^Version: ${PKGDEF} | awk '{print $2}')
 ARCH=$(grep ^Architecture: ${PKGDEF} | awk '{print $2}')
 DEBPKG=${PKG}_${VERSION}_${ARCH}.deb
@@ -13,6 +13,7 @@ OS_RELEASE=/etc/os-release
 DIR=~/mpd-${VERSION}
 
 # Amend this to point to the actual MPD build directory
+BUILD_DIR=/home/pi/mpd-0.23.14
 
 # Modify package definition with version number
 SAVEIFS=${IFS}; IFS='-'

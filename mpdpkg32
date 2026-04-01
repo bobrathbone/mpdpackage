@@ -1,26 +1,28 @@
 ### Commented entries have reasonable defaults.
 ### Uncomment to edit them.
-# $Id: mpdpkg,v 1.23 2026/03/24 17:46:34 bob Exp $
+# $Id: mpdpkg32,v 1.2 2026/04/01 10:07:24 bob Exp $
 # This package must be built under Raspbian Buster (Not Jessie or earlier)
 # Source: <source package name; defaults to package name>
+# OBSOLETE - use build.sh and mpdpkg to build "all" (32 and 64-bit) architecture
 Section: misc
 Priority: optional
 Homepage: http://www.bobrathbone.com
 Standards-Version: 3.9.2
 
 Package: mpd
-Version: 0.24.9
+Version: 0.23.14
 Maintainer: Bob Rathbone <bob@bobrathbone.com>
 Email-Address : bob@bobrathbone.com
 
 # Pre-Depends: <comma-separated list of packages>
 # Depends: <comma-separated list of packages>
-#Depends: libsidutils0
+Depends: libsidutils0
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
 # Provides: <comma-separated list of packages>
 # Replaces: <comma-separated list of packages>
-Architecture: all
+# Architecture: all
+Architecture: armhf
 
 # Copyright: <defaults to GPL2>
 # Changelog: <changelog file; defaults to a generic changelog>

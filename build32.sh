@@ -1,11 +1,11 @@
 #!/bin/bash
-# $Id: build.sh,v 1.24 2026/03/24 17:46:34 bob Exp $
+# $Id: build32.sh,v 1.2 2026/04/01 10:07:23 bob Exp $
 # Build script for packaging latest build of Music Player Daemon (MPD)
 # Run this script as user pi and not root
+# OBSOLETE - use build.sh and mpdpkg to build "all" (32 and 64-bit) architecture
 
 PKG=mpd
 PKGDEF=mpdpkg
-BUILD_DIR=/home/pi/mpd-0.24.9
 VERSION=$(grep ^Version: ${PKGDEF} | awk '{print $2}')
 ARCH=$(grep ^Architecture: ${PKGDEF} | awk '{print $2}')
 DEBPKG=${PKG}_${VERSION}_${ARCH}.deb
@@ -13,6 +13,7 @@ OS_RELEASE=/etc/os-release
 DIR=~/mpd-${VERSION}
 
 # Amend this to point to the actual MPD build directory
+BUILD_DIR=/home/pi/mpd-0.23.14
 
 # Modify package definition with version number
 SAVEIFS=${IFS}; IFS='-'
@@ -27,11 +28,11 @@ if [[ "$EUID" -eq 0 ]];then
         exit 1
 fi
 
-# Check if this machine is 64-bit
+# Check if this machine is 32-bit
 BIT=$(getconf LONG_BIT)
-if [[ ${BIT} != "64" ]]; then
-    echo "This build will only run on a 64-bit system"
-    echo "This is a ${BIT}-bit system. Use the build.sh script"
+if [[ ${BIT} != "32" ]]; then
+    echo "This build will only run on a 32-bit system."
+    echo "This is a ${BIT}-bit system. Use build64.sh script."
     exit 1
 fi
 
