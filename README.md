@@ -10,6 +10,8 @@ retrieval, and playlist management can all be managed remotely.
 For basic installation instructions
 [read the manual](https://www.musicpd.org/doc/user/install.html).
 
+Note: This is not an official release from the Music Player Daemon Foundation. This code takes the official MPD source and creates a Debian package specifically for the Raspberry Pi.
+
 # Users
 
 - [Manual](https://mpd.readthedocs.io/en/stable/user.html)
